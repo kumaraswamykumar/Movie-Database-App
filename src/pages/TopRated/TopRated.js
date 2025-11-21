@@ -1,40 +1,31 @@
 import {useEffect, useState} from 'react'
+import Navbar from '../../components/Navbar/Navbar'
 import MovieCard from '../../components/MovieCard/MovieCard'
 import Pagination from '../../components/Pagination/Pagination'
 import './TopRated.css'
 
-const API_KEY = 'YOUR_API_KEY'
-
 const TopRated = () => {
-  const [movies, setMovies] = useState([])
+  const [data, setData] = useState([])
   const [page, setPage] = useState(1)
-  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    const fetchTopRatedMovies = async () => {
-      setLoading(true)
-      try {
-        const res = await fetch(
-          `https://api.themoviedb.org/3/movie/top_rated?api_key=${API_KEY}&language=en-US&page=${page}`,
-        )
-        const data = await res.json()
-        setMovies(data.results)
-      } catch (err) {
-        console.error('Error fetching top rated movies:', err)
-      } finally {
-        setLoading(false)
-      }
+    const fetchData = async () => {
+      const res = await fetch(
+        `https://api.themoviedb.org/3/movie/top_rated?api_key=412a83faa2614e2a6024230b50735e36&language=en-US&page=${page}`,
+      )
+      const json = await res.json()
+      setData(json.results)
     }
-    fetchTopRatedMovies()
+
+    fetchData()
   }, [page])
 
-  if (loading) return <h2 className="loading-text">Loading...</h2>
-
   return (
-    <div className="toprated-container">
-      <h1 className="toprated-heading">Top Rated Movies</h1>
-      <div className="toprated-movies-grid">
-        {movies.map(movie => (
+    <div>
+      <Navbar />
+      <h1 className="heading">Top Rated</h1>
+      <div className="movies-container">
+        {data.map(movie => (
           <MovieCard key={movie.id} movie={movie} />
         ))}
       </div>

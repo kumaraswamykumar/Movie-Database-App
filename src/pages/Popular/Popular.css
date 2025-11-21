@@ -1,18 +1,9 @@
-.popular-container {
-  padding: 20px;
-  background-color: #121212;
-  min-height: 100vh;
-  color: white;
-}
-
-.popular-heading {
+.heading {
   text-align: center;
-  margin-bottom: 20px;
+  margin: 20px 0;
 }
-
-.popular-movies-grid {
+.movies-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
 }

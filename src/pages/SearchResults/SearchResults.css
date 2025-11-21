@@ -1,32 +1,16 @@
-.search-results-container {
-  background-color: #111;
-  min-height: 100vh;
-  padding: 20px;
-  color: white;
-}
-
-.search-results-heading {
+.heading {
   text-align: center;
-  margin-bottom: 20px;
+  margin: 20px 0;
 }
-
-.search-movies-grid {
+.search-input {
+  width: 60%;
+  padding: 10px;
+  display: block;
+  margin: auto;
+  margin-bottom: 25px;
+}
+.movies-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
   justify-content: center;
-}
-
-.no-results-text {
-  text-align: center;
-  font-size: 20px;
-  margin-top: 40px;
-  color: #bbb;
-}
-
-.loading-text {
-  text-align: center;
-  margin-top: 40px;
-  font-size: 22px;
-  color: white;
 }

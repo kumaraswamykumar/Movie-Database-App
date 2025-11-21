@@ -1,25 +1,26 @@
-import {BrowserRouter, Route, Switch} from 'react-router-dom'
-import Navbar from './components/Navbar/Navbar'
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect,
+} from 'react-router-dom'
 import Popular from './pages/Popular/Popular'
 import TopRated from './pages/TopRated/TopRated'
 import Upcoming from './pages/Upcoming/Upcoming'
-import SearchResults from './pages/SearchResults/SearchResults'
 import MovieDetails from './pages/MovieDetails/MovieDetails'
-import './App.css'
+import SearchResults from './pages/SearchResults/SearchResults'
 
-function App() {
-  return (
-    <BrowserRouter>
-      <Navbar />
-      <Switch>
-        <Route exact path="/" component={Popular} />
-        <Route exact path="/top-rated" component={TopRated} />
-        <Route exact path="/upcoming" component={Upcoming} />
-        <Route exact path="/search" component={SearchResults} />
-        <Route exact path="/movie/:id" component={MovieDetails} />
-      </Switch>
-    </BrowserRouter>
-  )
-}
+const App = () => (
+  <Router>
+    <Switch>
+      <Route exact path="/popular" component={Popular} />
+      <Route exact path="/top-rated" component={TopRated} />
+      <Route exact path="/upcoming" component={Upcoming} />
+      <Route exact path="/movie/:id" component={MovieDetails} />
+      <Route exact path="/search" component={SearchResults} />
+      <Redirect to="/popular" />
+    </Switch>
+  </Router>
+)
 
 export default App

@@ -1,24 +1,9 @@
-.toprated-container {
-  padding: 20px;
-  background-color: #121212;
-  min-height: 100vh;
-  color: white;
-}
-
-.toprated-heading {
+.heading {
   text-align: center;
-  margin-bottom: 20px;
+  margin: 20px 0;
 }
-
-.toprated-movies-grid {
+.movies-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
-}
-
-.loading-text {
-  text-align: center;
-  color: white;
-  margin-top: 40px;
 }

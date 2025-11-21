@@ -1,24 +1,9 @@
-.upcoming-container {
-  padding: 20px;
-  background-color: #111;
-  min-height: 100vh;
-  color: white;
-}
-
-.upcoming-heading {
+.heading {
   text-align: center;
-  margin-bottom: 20px;
+  margin: 20px 0;
 }
-
-.upcoming-movies-grid {
+.movies-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
   justify-content: center;
-}
-
-.loading-text {
-  text-align: center;
-  color: white;
-  margin-top: 40px;
 }
