@@ -1,0 +1,32 @@
+.search-results-container {
+  background-color: #111;
+  min-height: 100vh;
+  padding: 20px;
+  color: white;
+}
+
+.search-results-heading {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.search-movies-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.no-results-text {
+  text-align: center;
+  font-size: 20px;
+  margin-top: 40px;
+  color: #bbb;
+}
+
+.loading-text {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 22px;
+  color: white;
+}

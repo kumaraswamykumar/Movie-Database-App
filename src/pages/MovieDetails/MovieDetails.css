@@ -1,0 +1,80 @@
+.movie-details-container {
+  background-color: #111;
+  min-height: 100vh;
+  padding: 20px;
+  color: white;
+}
+
+.movie-main-section {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.movie-poster {
+  width: 300px;
+  border-radius: 10px;
+}
+
+.movie-info {
+  max-width: 500px;
+}
+
+.movie-title {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.movie-rating,
+.movie-runtime,
+.movie-release,
+.movie-genres {
+  margin: 5px 0;
+  font-size: 18px;
+}
+
+.movie-overview {
+  margin-top: 15px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.cast-heading {
+  font-size: 26px;
+  margin-bottom: 20px;
+}
+
+.cast-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.cast-card {
+  width: 150px;
+  text-align: center;
+}
+
+.cast-img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.cast-name {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.cast-character {
+  font-size: 14px;
+  color: #bbb;
+}
+
+.loading-text {
+  text-align: center;
+  color: white;
+  margin-top: 40px;
+}

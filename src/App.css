@@ -1,0 +1,104 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* App wrapper */
+body {
+  background-color: #0d0d0d;
+  color: #ffffff;
+}
+
+/* Page container layout */
+.page-container {
+  padding: 20px;
+  margin-top: 80px; /* space for navbar */
+}
+
+/* Movie grid layout for Popular / TopRated / Upcoming / SearchResults */
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 20px;
+}
+
+/* Center content loader */
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Movie details main layout */
+.details-container {
+  margin-top: 100px;
+  padding: 20px;
+}
+
+.details-header {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.details-header img {
+  width: 250px;
+  border-radius: 10px;
+}
+
+.details-info {
+  max-width: 600px;
+}
+
+/* Cast grid layout */
+.cast-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.cast-card {
+  background: #1a1a1a;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.cast-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .details-header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .details-header img {
+    width: 200px;
+  }
+}
