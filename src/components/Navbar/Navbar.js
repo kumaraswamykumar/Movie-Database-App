@@ -6,23 +6,20 @@ const Navbar = () => {
   const [path, setPath] = useState('')
   const [searchQuery, setSearchQuery] = useState('')
 
-  if (path) return <Redirect to={path} />
-
   const handleSearch = () => {
     if (searchQuery.trim() !== '') {
       setPath(`/search?q=${encodeURIComponent(searchQuery)}`)
     }
   }
 
+  if (path) return <Redirect to={path} />
+
   return (
     <nav className="nav-container">
-      <button
-        type="button"
-        className="logo"
-        onClick={() => setPath('/popular')}
-      >
+      <h1 className="logo" onClick={() => setPath('/popular')}>
         movieDB
-      </button>
+      </h1>
+
       <div className="nav-right">
         <div className="nav-buttons">
           <button
@@ -47,6 +44,7 @@ const Navbar = () => {
             Upcoming
           </button>
         </div>
+
         <div className="search-container">
           <input
             type="text"
@@ -55,12 +53,9 @@ const Navbar = () => {
             onChange={e => setSearchQuery(e.target.value)}
             className="search-input"
           />
-          <button
-            type="button"
-            onClick={handleSearch}
-            className="search-icon-btn"
-          >
-            🔍
+
+          <button type="button" onClick={handleSearch} className="nav-btn">
+            Search
           </button>
         </div>
       </div>

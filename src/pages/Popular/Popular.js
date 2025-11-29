@@ -16,13 +16,13 @@ const Popular = () => {
       const json = await res.json()
       setData(json.results)
     }
-
     fetchData()
   }, [page])
 
   return (
     <div>
       <Navbar />
+
       <h1 className="heading">Popular</h1>
 
       <div className="movies-container">
@@ -30,6 +30,7 @@ const Popular = () => {
           <MovieCard key={movie.id} movie={movie} />
         ))}
       </div>
+
       <Pagination page={page} setPage={setPage} />
     </div>
   )
