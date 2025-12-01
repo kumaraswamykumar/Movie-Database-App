@@ -1,22 +1,28 @@
 import {useState} from 'react'
-import {Redirect} from 'react-router-dom'
+import {withRouter} from 'react-router-dom'
 import './Navbar.css'
 
-const Navbar = () => {
-  const [path, setPath] = useState('')
+const Navbar = ({history}) => {
   const [searchQuery, setSearchQuery] = useState('')
+
+  const navigateTo = path => {
+    history.push(path)
+  }
 
   const handleSearch = () => {
     if (searchQuery.trim() !== '') {
-      setPath(`/search?q=${encodeURIComponent(searchQuery)}`)
+      history.push(`/search?q=${encodeURIComponent(searchQuery)}`)
+      setSearchQuery('')
     }
   }
 
-  if (path) return <Redirect to={path} />
-
   return (
     <nav className="nav-container">
-      <h1 className="logo" onClick={() => setPath('/popular')}>
+      <h1
+        className="logo"
+        onClick={() => navigateTo('/popular')}
+        style={{cursor: 'pointer'}}
+      >
         movieDB
       </h1>
 
@@ -24,21 +30,23 @@ const Navbar = () => {
         <div className="nav-buttons">
           <button
             type="button"
-            onClick={() => setPath('/popular')}
+            onClick={() => navigateTo('/popular')}
             className="nav-btn"
           >
             Popular
           </button>
+
           <button
             type="button"
-            onClick={() => setPath('/top-rated')}
+            onClick={() => navigateTo('/top-rated')}
             className="nav-btn"
           >
             Top Rated
           </button>
+
           <button
             type="button"
-            onClick={() => setPath('/upcoming')}
+            onClick={() => navigateTo('/upcoming')}
             className="nav-btn"
           >
             Upcoming
@@ -49,9 +57,9 @@ const Navbar = () => {
           <input
             type="text"
             placeholder="Search movies..."
+            className="search-input"
             value={searchQuery}
             onChange={e => setSearchQuery(e.target.value)}
-            className="search-input"
           />
 
           <button type="button" onClick={handleSearch} className="nav-btn">
@@ -63,4 +71,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar
+export default withRouter(Navbar)
